@@ -1,0 +1,1111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BAWOW DIGITAL provides website development, graphic design, social media management, video editing and digital marketing.">
+<title>BAWOW DIGITAL | Digital Solutions</title>
+
+<style>
+:root {
+  --navy:#102b46;
+  --blue:#1769aa;
+  --light:#edf5fc;
+  --gold:#e5ad45;
+  --white:#ffffff;
+  --dark:#172b3e;
+  --muted:#667789;
+  --green:#13875a;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif;
+}
+
+html { scroll-behavior:smooth; }
+
+body {
+  background:#f5f8fc;
+  color:var(--dark);
+  line-height:1.6;
+}
+
+a { text-decoration:none; color:inherit; }
+
+button,input,select,textarea { font:inherit; }
+
+header {
+  background:var(--navy);
+  color:white;
+  padding:15px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 3px 15px #0002;
+}
+
+.logo {
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span { color:var(--gold); }
+
+nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+
+nav a {
+  font-size:13px;
+  font-weight:bold;
+}
+
+nav a:hover { color:var(--gold); }
+
+.menu-btn {
+  display:none;
+  background:none;
+  color:white;
+  border:0;
+  font-size:27px;
+  cursor:pointer;
+}
+
+.btn {
+  display:inline-block;
+  background:var(--blue);
+  color:white;
+  padding:12px 23px;
+  border:0;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover {
+  background:#0c4e86;
+  transform:translateY(-2px);
+}
+
+.btn-gold {
+  background:var(--gold);
+  color:var(--navy);
+}
+
+.btn-outline {
+  border:1px solid white;
+  background:transparent;
+}
+
+section { padding:75px 7%; }
+
+.hero {
+  min-height:550px;
+  background:linear-gradient(120deg,#102b46,#1769aa);
+  color:white;
+  display:flex;
+  align-items:center;
+}
+
+.hero-content { max-width:750px; }
+
+.hero h1 {
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.12;
+  margin-bottom:20px;
+}
+
+.hero h1 span { color:var(--gold); }
+
+.hero p {
+  font-size:18px;
+  color:#e1edf8;
+  margin-bottom:28px;
+}
+
+.hero-label {
+  color:var(--gold);
+  font-weight:bold;
+  letter-spacing:3px;
+  font-size:12px;
+  margin-bottom:15px;
+}
+
+.hero-actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.section-title {
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.section-title h2 {
+  color:var(--navy);
+  font-size:32px;
+}
+
+.section-title p {
+  color:var(--muted);
+  margin-top:8px;
+}
+
+.about-grid,.contact-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+  align-items:center;
+}
+
+.about-card,.service-card,.price-card,
+.portfolio-card,.payment-card {
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 5px 22px #102b4610;
+}
+
+.about-card h3 { color:var(--blue); margin-bottom:12px; }
+
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin-top:25px;
+}
+
+.stat {
+  background:var(--light);
+  padding:18px;
+  text-align:center;
+  border-radius:8px;
+}
+
+.stat h3 { color:var(--blue); font-size:24px; }
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.service-card {
+  border-bottom:4px solid var(--blue);
+  transition:.25s;
+}
+
+.service-card:hover {
+  transform:translateY(-5px);
+}
+
+.service-icon {
+  font-size:35px;
+  margin-bottom:12px;
+}
+
+.service-card h3,.price-card h3 {
+  color:var(--navy);
+  margin-bottom:10px;
+}
+
+.service-card p,.portfolio-card p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.price {
+  color:var(--blue);
+  font-size:27px;
+  font-weight:900;
+  margin:15px 0;
+}
+
+.price-card ul {
+  padding-left:20px;
+  margin:15px 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.price-card.featured {
+  border:2px solid var(--gold);
+}
+
+.portfolio-card {
+  text-align:center;
+  min-height:180px;
+}
+
+.portfolio-icon { font-size:40px; margin-bottom:10px; }
+
+.steps {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+
+.step {
+  padding:22px;
+  background:var(--light);
+  border-radius:10px;
+}
+
+.step strong {
+  display:block;
+  color:var(--blue);
+  font-size:22px;
+}
+
+form {
+  background:white;
+  padding:28px;
+  border-radius:12px;
+  box-shadow:0 5px 22px #102b4610;
+}
+
+form h3 { margin-bottom:18px; color:var(--navy); }
+
+label {
+  display:block;
+  margin:13px 0 6px;
+  font-weight:bold;
+  font-size:13px;
+}
+
+input,select,textarea {
+  width:100%;
+  padding:12px;
+  border:1px solid #d7e0e9;
+  border-radius:6px;
+  background:white;
+  outline:none;
+}
+
+input:focus,select:focus,textarea:focus {
+  border-color:var(--blue);
+}
+
+textarea {
+  min-height:100px;
+  resize:vertical;
+}
+
+.payment-area {
+  background:#eaf3fb;
+  padding:25px;
+  border-radius:12px;
+  margin-top:20px;
+}
+
+.payment-area h3 { color:var(--navy); }
+
+.payment-card {
+  margin-top:14px;
+  border-left:4px solid var(--blue);
+}
+
+.payment-number {
+  font-size:19px;
+  font-weight:bold;
+  color:var(--blue);
+  margin:8px 0;
+  word-break:break-word;
+}
+
+.copy-btn {
+  border:0;
+  background:var(--navy);
+  color:white;
+  padding:8px 14px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.notice {
+  background:#fff5dc;
+  padding:14px;
+  border-radius:7px;
+  font-size:13px;
+  margin-top:15px;
+  color:#765216;
+}
+
+footer {
+  background:var(--navy);
+  color:white;
+  padding:45px 7% 20px;
+}
+
+.footer-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+  margin-bottom:30px;
+}
+
+footer h3 { color:var(--gold); margin-bottom:12px; }
+
+footer p,footer a {
+  color:#d2deeb;
+  font-size:14px;
+}
+
+footer a { display:block; margin:7px 0; }
+
+.copyright {
+  border-top:1px solid #ffffff25;
+  padding-top:20px;
+  text-align:center;
+  font-size:12px;
+}
+
+.hidden { display:none; }
+
+@media(max-width:850px) {
+  nav {
+    display:none;
+    position:absolute;
+    top:65px;
+    left:0;
+    width:100%;
+    background:var(--navy);
+    padding:20px;
+    flex-direction:column;
+  }
+
+  nav.active { display:flex; }
+
+  .menu-btn { display:block; }
+
+  .about-grid,.contact-grid {
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px) {
+  header { padding:14px 5%; }
+  .logo { font-size:19px; }
+  section { padding:55px 5%; }
+  .hero { min-height:480px; }
+  .stats { grid-template-columns:1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a href="#home" class="logo">BAWOW <span>DIGITAL</span></a>
+
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+  <nav id="navigation">
+    <a href="#home" onclick="closeMenu()">Home</a>
+    <a href="#about" onclick="closeMenu()">About</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#pricing" onclick="closeMenu()">Pricing</a>
+    <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+    <a href="#payment" onclick="closeMenu()">Payment</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <div class="hero-label">DIGITAL SOLUTIONS FOR GROWING BUSINESSES</div>
+
+    <h1>
+      Build Your Business.
+      <span>Grow Digitally.</span>
+    </h1>
+
+    <p>
+      Welcome to Bawow Digital. We help entrepreneurs,
+      individuals and businesses improve their online presence
+      through creative design, websites and digital marketing.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#services" class="btn btn-gold">Explore Services</a>
+      <a href="#contact" class="btn btn-outline">Contact Us</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="section-title">
+    <h2>About Bawow Digital</h2>
+    <p>Who we are and what we aim to achieve.</p>
+  </div>
+
+  <div class="about-grid">
+
+    <div>
+      <h2 style="color:#1769aa;margin-bottom:15px">
+        Digital Solutions for Growing Businesses
+      </h2>
+
+      <p>
+        Bawow Digital is a developing Ghana-based digital services
+        brand focused on helping individuals, entrepreneurs and
+        organisations establish a stronger digital presence.
+      </p>
+
+      <br>
+
+      <p>
+        Our services include website development, graphic design,
+        social media management, video editing and digital marketing.
+      </p>
+
+      <br>
+
+      <p>
+        Our objective is to serve customers in Ghana and gradually
+        expand our services across West Africa.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <h3>Our Mission</h3>
+      <p>
+        To provide accessible and professional digital solutions
+        that help businesses grow.
+      </p>
+
+      <br>
+
+      <h3>Our Vision</h3>
+      <p>
+        To become a respected digital services brand serving
+        businesses across Africa.
+      </p>
+
+      <br>
+
+      <h3>Our Founder</h3>
+      <p><strong>Suleman Eliasu Sawadigo</strong></p>
+      <p>Founder and Business Lead</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" style="background:#edf5fc">
+
+  <div class="section-title">
+    <h2>Our Services</h2>
+    <p>Everything your business needs to grow digitally.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="service-card">
+      <div class="service-icon">🎨</div>
+      <h3>Graphic Design</h3>
+      <p>
+        Flyers, posters, logos, business cards,
+        advertisements and promotional materials.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Website Development</h3>
+      <p>
+        Professional business websites, landing pages,
+        portfolios and online booking pages.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📱</div>
+      <h3>Social Media Management</h3>
+      <p>
+        Social media content, captions, content planning
+        and business page management.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>Video Editing</h3>
+      <p>
+        Promotional videos, advertisements, short-form
+        content and business videos.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">📈</div>
+      <h3>Digital Marketing</h3>
+      <p>
+        Online marketing strategies, promotional
+        campaigns and advertising content.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+
+<section id="pricing">
+
+  <div class="section-title">
+    <h2>Our Pricing</h2>
+    <p>Affordable introductory packages.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="price-card">
+      <h3>Starter Design</h3>
+      <div class="price">GH₵100</div>
+      <ul>
+        <li>3 social media designs</li>
+        <li>Basic revisions</li>
+        <li>Digital delivery</li>
+      </ul>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+
+    <div class="price-card featured">
+      <h3>Business Package</h3>
+      <div class="price">GH₵250</div>
+      <ul>
+        <li>8 social media designs</li>
+        <li>Captions</li>
+        <li>Basic content planning</li>
+      </ul>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Growth Package</h3>
+      <div class="price">GH₵400</div>
+      <ul>
+        <li>12 social media designs</li>
+        <li>Content planning</li>
+        <li>Basic page management</li>
+      </ul>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+
+    <div class="price-card">
+      <h3>Website Starter</h3>
+      <div class="price">GH₵400</div>
+      <ul>
+        <li>Basic business website</li>
+        <li>Contact information</li>
+        <li>Mobile-friendly design</li>
+      </ul>
+      <a href="#contact" class="btn">Book Now</a>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:25px;color:#667789">
+    Prices are introductory estimates. Final quotations depend
+    on project requirements, hosting and additional features.
+  </p>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section id="portfolio" style="background:#edf5fc">
+
+  <div class="section-title">
+    <h2>Our Portfolio</h2>
+    <p>Examples of the work we can provide.</p>
+  </div>
+
+  <div class="grid">
+
+    <div class="portfolio-card">
+      <div class="portfolio-icon">🎨</div>
+      <h3>Creative Designs</h3>
+      <p>Business advertisements and promotional flyers.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-icon">🌐</div>
+      <h3>Website Projects</h3>
+      <p>Modern and responsive business websites.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-icon">📲</div>
+      <h3>Social Media</h3>
+      <p>Digital content and online brand presentation.</p>
+    </div>
+
+    <div class="portfolio-card">
+      <div class="portfolio-icon">🎥</div>
+      <h3>Video Production</h3>
+      <p>Promotional and marketing video content.</p>
+    </div>
+
+  </div>
+
+  <p style="text-align:center;margin-top:20px;color:#667789">
+    Portfolio categories are illustrative until actual
+    completed projects are added.
+  </p>
+</section>
+
+<!-- HOW IT WORKS -->
+
+<section id="process">
+
+  <div class="section-title">
+    <h2>How It Works</h2>
+    <p>Our simple customer service process.</p>
+  </div>
+
+  <div class="steps">
+
+    <div class="step">
+      <strong>01</strong>
+      <h3>Choose a Service</h3>
+      <p>Tell us what your business needs.</p>
+    </div>
+
+    <div class="step">
+      <strong>02</strong>
+      <h3>Request a Quote</h3>
+      <p>We review your project and provide pricing.</p>
+    </div>
+
+    <div class="step">
+      <strong>03</strong>
+      <h3>Make Payment</h3>
+      <p>Use an agreed MoMo or T-Cash payment arrangement.</p>
+    </div>
+
+    <div class="step">
+      <strong>04</strong>
+      <h3>Project Delivery</h3>
+      <p>We complete and deliver the agreed work.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section id="contact" style="background:#edf5fc">
+
+  <div class="section-title">
+    <h2>Book a Service</h2>
+    <p>Tell us about your next project.</p>
+  </div>
+
+  <div class="contact-grid">
+
+    <form id="bookingForm">
+
+      <h3>Customer Enquiry Form</h3>
+
+      <label>Full Name</label>
+      <input id="customerName" required placeholder="Enter your name">
+
+      <label>Business Name</label>
+      <input id="businessName" placeholder="Your business name">
+
+      <label>Email Address</label>
+      <input id="customerEmail" type="email" required placeholder="Enter your email">
+
+      <label>Country</label>
+      <select id="country" required>
+        <option value="">Choose country</option>
+        <option>Ghana</option>
+        <option>Nigeria</option>
+        <option>Togo</option>
+        <option>Côte d'Ivoire</option>
+        <option>Senegal</option>
+        <option>Other</option>
+      </select>
+
+      <label>Choose a Service</label>
+      <select id="service" required>
+        <option value="">Select service</option>
+        <option>Graphic Design</option>
+        <option>Website Development</option>
+        <option>Social Media Management</option>
+        <option>Video Editing</option>
+        <option>Digital Marketing</option>
+      </select>
+
+      <label>Estimated Budget</label>
+      <select id="budget">
+        <option>Not decided</option>
+        <option>Below GH₵100</option>
+        <option>GH₵100 - GH₵300</option>
+        <option>GH₵300 - GH₵500</option>
+        <option>Above GH₵500</option>
+      </select>
+
+      <label>Project Description</label>
+      <textarea id="description" required
+      placeholder="Describe what you want us to create..."></textarea>
+
+      <button class="btn" type="submit" style="width:100%;margin-top:18px">
+        Send Booking Request
+      </button>
+
+      <p style="font-size:12px;color:#667789;margin-top:10px">
+        Submitting an enquiry does not automatically confirm
+        a booking or require payment.
+      </p>
+
+    </form>
+
+    <div>
+      <div class="about-card">
+        <h3>Contact Bawow Digital</h3>
+        <p><strong>Business:</strong> Bawow Digital</p>
+        <p><strong>Founder:</strong> Suleman Eliasu Sawadigo</p>
+        <p><strong>Email:</strong> bawowad@gmail.com</p>
+        <p><strong>Instagram:</strong> @Bawowad_gh</p>
+         <p><strong>Number:</strong> 0557307641/0202624573</p>
+        <p><strong>Location:</strong> Ghana</p>
+        <br>
+        <a href="https://www.instagram.com/Bawowad_gh/"
+        target="_blank" rel="noopener" class="btn">
+          Visit Instagram
+        </a>
+      </div>
+
+      <!-- PAYMENT OPTIONS -->
+
+      <div class="payment-area" id="payment">
+
+        <h3>💳 Payment Methods</h3>
+
+        <p style="font-size:14px;margin-top:8px">
+          Bawow Digital accepts the following payment methods
+          where supported by the customer's country and provider.
+        </p>
+
+        <div class="payment-card">
+
+          <h3>📱 Mobile Money (MoMo)</h3>
+
+          <p>Network: <span id="momoNetwork">MTN Mobile Money</span></p>
+
+          <div class="payment-number" id="0557307641">
+            0557307641            
+          </div>
+
+          <p>Account name: <span id="   Suleman Eliasu"> Suleman Eliasu</span></p>
+
+          <button class="copy-btn" onclick="copyText('momoNumber')">
+            Copy MoMo Number
+          </button>
+
+        </div>
+
+        <div class="payment-card">
+
+          <h3>📲 T-Cash</h3>
+
+          <p>Provider: T-Cash</p>
+
+          <div class="payment-number" id="tcashNumber">
+            0202624573
+          </div>
+
+          <p>Account name: <span id="Akwasi ">Akwasi </span></p>
+
+          <button class="copy-btn" onclick="copyText('tcashNumber')">
+            Copy T-Cash Number
+          </button>
+
+        </div>
+
+        <div class="notice">
+          <strong>Payment safety:</strong>
+          Always confirm the correct account details with Bawow
+          Digital before transferring money. Never share your
+          MoMo PIN, T-Cash PIN or OTP with anyone.
+        </div>
+
+        <br>
+
+        <h3>Submit Payment Reference</h3>
+
+        <form id="paymentForm">
+
+          <label>Customer Name</label>
+          <input id="payerName" required>
+
+          <label>Payment Method</label>
+          <select id="paymentMethod" required>
+            <option value="">Choose payment method</option>
+            <option>Mobile Money (MoMo)</option>
+            <option>T-Cash</option>
+          </select>
+
+          <label>Amount Paid</label>
+          <input id="amountPaid" type="number" min="0.01" step="0.01" required>
+
+          <label>Transaction Reference</label>
+          <input id="transactionReference" required
+          placeholder="Enter transaction reference">
+
+          <button type="submit" class="btn" style="width:100%;margin-top:15px">
+            Submit Payment Reference
+          </button>
+
+          <p style="font-size:12px;margin-top:10px;color:#667789">
+            Submitting a reference does not verify payment.
+            Payment must be confirmed against the provider's
+            transaction records.
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-grid">
+
+    <div>
+      <h3>BAWOW DIGITAL</h3>
+      <p>
+        Digital solutions for growing businesses.
+        Building professional digital experiences
+        from Ghana to the wider African market.
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div>
+      <h3>Services</h3>
+      <a href="#services">Graphic Design</a>
+      <a href="#services">Website Development</a>
+      <a href="#services">Social Media</a>
+      <a href="#services">Video Editing</a>
+      <a href="#services">Digital Marketing</a>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>Email: bawowad@gmail.com</p>
+      <p>Instagram: @Bawowad_gh</p>
+      <p>Ghana</p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="year"></span> BAWOW DIGITAL.
+    All rights reserved.
+    <br><br>
+    A developing digital services brand.
+  </div>
+
+</footer>
+
+<script>
+
+// ==================================
+// BUSINESS SETTINGS
+// EDIT THESE DETAILS BEFORE PUBLISHING
+// ==================================
+
+const BUSINESS = {
+
+  whatsapp: "233XXXXXXXXX",
+
+  email: "bawowad@gmail.com",
+
+  momoNetwork: "MTN Mobile Money",
+
+  momoNumber: "0XXXXXXXXX",
+
+  momoName: "UPDATE ACCOUNT NAME",
+
+  tcashNumber: "0XXXXXXXXX",
+
+  tcashName: "UPDATE ACCOUNT NAME"
+
+};
+
+// ==================================
+// DISPLAY BUSINESS PAYMENT DETAILS
+// ==================================
+
+document.getElementById("momoNetwork").textContent =
+  BUSINESS.momoNetwork;
+
+document.getElementById("momoNumber").textContent =
+  BUSINESS.momoNumber;
+
+document.getElementById("momoName").textContent =
+  BUSINESS.momoName;
+
+document.getElementById("tcashNumber").textContent =
+  BUSINESS.tcashNumber;
+
+document.getElementById("tcashName").textContent =
+  BUSINESS.tcashName;
+
+// ==================================
+// NAVIGATION
+// ==================================
+
+function toggleMenu() {
+  document.getElementById("navigation").classList.toggle("active");
+}
+
+function closeMenu() {
+  document.getElementById("navigation").classList.remove("active");
+}
+
+// ==================================
+// COPY PAYMENT DETAILS
+// ==================================
+
+function copyText(elementId) {
+
+  const value = document.getElementById(elementId).textContent.trim();
+
+  if (value.includes("X") || !value) {
+    alert("Please contact Bawow Digital to confirm the payment number.");
+    return;
+  }
+
+  navigator.clipboard.writeText(value)
+    .then(() => alert("Payment number copied successfully."))
+    .catch(() => alert("Unable to copy. Please copy the number manually."));
+}
+
+// ==================================
+// WHATSAPP MESSAGE
+// ==================================
+
+function sendWhatsApp(message) {
+
+  if (!/^233\d{9}$/.test(BUSINESS.whatsapp)) {
+    alert("WhatsApp contact has not been configured yet. Please use the business email.");
+    return;
+  }
+
+  const url = "https://wa.me/" +
+    BUSINESS.whatsapp +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url, "_blank");
+}
+
+// ==================================
+// CUSTOMER BOOKING
+// ==================================
+
+document.getElementById("bookingForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById("customerName").value;
+  const business = document.getElementById("businessName").value;
+  const email = document.getElementById("customerEmail").value;
+  const country = document.getElementById("country").value;
+  const service = document.getElementById("service").value;
+  const budget = document.getElementById("budget").value;
+  const description = document.getElementById("description").value;
+
+  const message =
+    "NEW BAWOW DIGITAL ENQUIRY\n\n" +
+    "Name: " + name + "\n" +
+    "Business: " + business + "\n" +
+    "Email: " + email + "\n" +
+    "Country: " + country + "\n" +
+    "Service: " + service + "\n" +
+    "Budget: " + budget + "\n" +
+    "Description: " + description;
+
+  sendWhatsApp(message);
+
+});
+
+// ==================================
+// PAYMENT REFERENCE SUBMISSION
+// ==================================
+
+document.getElementById("paymentForm")
+.addEventListener("submit", function(event) {
+
+  event.preventDefault();
+
+  const name = document.getElementById("payerName").value;
+  const method = document.getElementById("paymentMethod").value;
+  const amount = document.getElementById("amountPaid").value;
+  const reference = document.getElementById("transactionReference").value;
+
+  const message =
+    "BAWOW DIGITAL PAYMENT REFERENCE\n\n" +
+    "Customer: " + name + "\n" +
+    "Method: " + method + "\n" +
+    "Amount: " + amount + "\n" +
+    "Transaction reference: " + reference + "\n\n" +
+    "Please verify this transaction.";
+
+  sendWhatsApp(message);
+
+});
+
+// ==================================
+// FOOTER YEAR
+// ==================================
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
+!
